@@ -9,6 +9,7 @@ class Klub(models.Model):
                              error_messages={'blank': 'Jméno města nebo obce musí být vyplněno'})
     zalozeni = models.IntegerField(blank=True, validators=[MinValueValidator(1900), MaxValueValidator(2022)], verbose_name='Rok založení',
                                    help_text='Zadejte rok založení')
+    logo = models.ImageField(blank=True, upload_to='loga', verbose_name='Logo klubu', help_text='Zadejte logo klubu')
 
     class Meta:
         ordering = ['nazev']
